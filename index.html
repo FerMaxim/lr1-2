@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Кварцвинил - Оплата товара и доставка</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+</head>
+<body>
+    <main>
+        <div class="welcome-img-container"><img class="welcome-img" src="./img/welcomePaymentDelivery.png" alt="Welcome payment and delivery"></div>
+        <section class="payment-section">
+            <h2 class="section-title">ОПЛАТА ТОВАРА</h2>
+            <div class="payment-options">
+                <div class="payment-card">
+                    <div class="payment-info">
+                        <h3 class="option-title">Оплата наличными</h3>
+                        <p class="option-desc">При получении товара на складе или курьеру</p>
+                    </div>
+                    <img src="./img/cash.svg" alt="Cash" class="payment-icon">
+                </div>
+                <div class="payment-card">
+                    <div class="payment-info">
+                        <h3 class="option-title">Оплата картой</h3>
+                        <p class="option-desc">При получении товара на складе или курьеру</p>
+                        <div class="option-images">
+                            <img src="./img/visa.png" alt="Visa" class="option-image">
+                            <img src="./img/mastercard.png" alt="Mastercard" class="option-image">
+                            <img src="./img/mir.png" alt="Mir" class="option-image">
+                            <img src="./img/sbp.png" alt="SBP" class="option-image">
+                        </div>
+                    </div>
+                    <img src="./img/card.svg" alt="Card" class="payment-icon">
+                </div>
+                <div class="payment-card">
+                    <div class="payment-info">
+                        <h3 class="option-title">Безналичный расчет</h3>
+                        <p class="option-desc">Безнилчная оплата по выставленному счёту</p>
+                    </div>
+                    <img src="./img/cashless.svg" alt="Cashless" class="payment-icon">
+                </div>
+            </div>
+            <div class="add-form-container">
+                <h3>Добавить способ оплаты</h3>
+                <form id="add-payment-form" class="add-form">
+                    <div class="form-group">
+                        <label for="payment-title">Заголовок:</label>
+                        <input type="text" id="payment-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-desc">Описание:</label>
+                        <textarea id="payment-desc" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-icon">Иконка:</label>
+                        <input type="file" id="payment-icon" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Дополнительные изображения (опционально):</label>
+                        <div id="additional-images-container"></div>
+                        <button type="button" id="add-image-btn">Добавить дополнительное изображение</button>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">Добавить</button>
+                        <button type="button" id="reset-payments-btn" class="reset-btn">Сбросить все способы оплаты</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="delivery-section">
+            <h2 class="section-title">ДОСТАВКА ТОВАРА</h2>
+            <p class="delivery-intro">Доставка товара осуществляется по тарифным зонам в течение 1-2 рабочих дней</p>
+            <div class="zones-container">
+                <div class="zone-card">
+                    <h3 class="zone-title">Тарифная зона 0 - 1800 ₽</h3>
+                    <p class="zone-desc">Доставка по Москве (кроме Новой Москвы и Зеленограда)</p>
+                </div>
+                <div class="zone-card">
+                    <h3 class="zone-title">Тарифная зона 1 - 3500 ₽</h3>
+                    <p class="zone-desc">Действует в пределах 30 км от МКАД</p>
+                </div>
+                <div class="zone-card">
+                    <h3 class="zone-title">Тарифная зона 2 - 4500 ₽</h3>
+                    <p class="zone-desc">Действует по всей территории Московской области, Новой Москвы и г. Зеленоград</p>
+                </div>
+                <div class="zone-card">
+                    <h3 class="zone-title">Тарифная зона 3 - 1200 ₽</h3>
+                    <p class="zone-desc">Доставка до транспортной компании в Москве</p>
+                </div>
+            </div>
+            <p class="delivery-note">* Отправка товара в регионы, осуществляется в течение 1-2 дней, только после 100% оплаты заказа. Доставка в регионы осуществляется транспортной компанией по выбору заказчика. Стоимость доставки в ваш город определяется индивидуально перевозчиком и оплачивается клиентом при получении товара.</p>
+            <div class="add-form-container">
+                <h3>Добавить тарифную зону</h3>
+                <form id="add-zone-form" class="add-form">
+                    <div class="form-group">
+                        <label for="zone-number">Номер тарифной зоны:</label>
+                        <input type="number" id="zone-number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zone-price">Стоимость доставки (₽):</label>
+                        <input type="number" id="zone-price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zone-desc-input">Описание:</label>
+                        <textarea id="zone-desc-input" required></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">Добавить</button>
+                        <button type="button" id="reset-zones-btn" class="reset-btn">Сбросить все тарифные зоны</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="./scripts.js"></script>
+</body>
+</html>
